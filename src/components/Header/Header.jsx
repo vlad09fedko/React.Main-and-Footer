@@ -8,9 +8,15 @@ export class Header extends Component {
         <h2>Header</h2>
         <p>Movies:</p>
         <ul>
-          {movies.map(movie => (
-            <li key={movie}>{movie}</li>
-          ))}
+          {movies.map(movie => {
+            const path = `../../../../../assets/imgs/${movie.replaceAll(' ', '_')}.png`;
+            return (
+              <div className='card'>
+                <img src={path} alt='poster' />
+                <p>{movie}</p>
+              </div>
+            );
+          })}
         </ul>
       </>
     );

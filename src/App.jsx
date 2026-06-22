@@ -8,8 +8,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    count: 0,
-    movies: ['The Shawshank Redemption', 'Uncharted', 'Spider-man'],
+    movies: ['The Showshank Redemption', 'Uncharted', 'Spider-man 3'],
   };
 
   render() {
