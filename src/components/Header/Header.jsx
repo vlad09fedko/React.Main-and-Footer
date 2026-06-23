@@ -21,6 +21,9 @@ export class Header extends Component {
               </div>
             ))}
           </ul>
+          <button className='clearBtn' onClick={() => onSelectMovie()}>
+            Clear
+          </button>
         </header>
       </>
     );

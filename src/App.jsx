@@ -12,14 +12,18 @@ class App extends Component {
     selectedMovie: null,
   };
 
-  selectMovie = movie => {
+  selectMovie = (movie = null) => {
     this.setState({ selectedMovie: movie });
   };
 
   render() {
     return (
       <>
-        <Header movies={this.state.movies} onSelectMovie={this.selectMovie} />
+        <Header
+          movies={this.state.movies}
+          onSelectMovie={this.selectMovie}
+          clearSelectedMovie={this.clearSelectedMovie}
+        />
         <div className='spacer'></div>
         <Main selectedMovie={this.state.selectedMovie} />
         <div className='spacer'></div>

@@ -1,5 +1,12 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
 h3 {
-  margin: 0.5em;
+  margin: 0.5em 0 0 0;
 }
 
 p {
@@ -23,8 +30,7 @@ ul {
   padding: 5px;
 }
 
-.card:hover,
-.active {
+.card:hover {
   outline: 2px solid var(--text);
 }
 
@@ -37,6 +43,14 @@ ul {
 .card > p {
   margin-top: auto;
   padding-top: 5px;
+}
+
+.clearBtn {
+  font-size: 1em;
+  width: fit-content;
+  padding: 0.2em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
 }
 
 .spacer {
