@@ -9,7 +9,7 @@ export class Header extends Component {
           <h3>Movies:</h3>
           <ul>
             {movies.map(movie => (
-              <div
+              <li
                 key={movie}
                 className='card'
                 onClick={() => onSelectMovie(movie)}>
@@ -18,7 +18,7 @@ export class Header extends Component {
                   alt='poster'
                 />
                 <p>{movie}</p>
-              </div>
+              </li>
             ))}
           </ul>
           <button className='clearBtn' onClick={() => onSelectMovie()}>
