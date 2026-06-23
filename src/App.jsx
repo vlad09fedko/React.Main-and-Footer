@@ -1,3 +1,5 @@
+'use strict';
+
 import { Component } from 'react';
 
 import Header from './components/Header/Header';
@@ -9,14 +11,21 @@ import './App.css';
 class App extends Component {
   state = {
     movies: ['The Showshank Redemption', 'Uncharted', 'Spider-man 3'],
+    selectedMovie: null,
+  };
+
+  selectMovie = async (movie, movieEl) => {
+    await this.setState({ selectedMovie: movie });
   };
 
   render() {
     return (
       <>
-        <Header movies={this.state.movies} />
-        <Main />
-        <Footer />
+        <Header movies={this.state.movies} onSelectMovie={this.selectMovie} />
+        <div className='spacer'></div>
+        <Main selectedMovie={this.state.selectedMovie} />
+        <div className='spacer'></div>
+        <Footer selectedMovie={this.state.selectedMovie} />
       </>
     );
   }

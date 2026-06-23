@@ -2,22 +2,28 @@ import { Component } from 'react';
 
 export class Header extends Component {
   render() {
-    const movies = this.props.movies;
+    const { movies, onSelectMovie } = this.props;
     return (
       <>
-        <h2>Header</h2>
-        <p>Movies:</p>
-        <ul>
-          {movies.map(movie => {
-            const path = `../../../../../assets/imgs/${movie.replaceAll(' ', '_')}.png`;
-            return (
-              <div className='card'>
-                <img src={path} alt='poster' />
-                <p>{movie}</p>
-              </div>
-            );
-          })}
-        </ul>
+        <header>
+          <h3>Movies:</h3>
+          <ul>
+            {movies.map(movie => {
+              return (
+                <div
+                  key={movie}
+                  className='card'
+                  onClick={() => onSelectMovie(movie)}>
+                  <img
+                    src={`../../../assets/imgs/${movie.replaceAll(' ', '_')}.png`}
+                    alt='poster'
+                  />
+                  <p>{movie}</p>
+                </div>
+              );
+            })}
+          </ul>
+        </header>
       </>
     );
   }
