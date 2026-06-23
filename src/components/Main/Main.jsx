@@ -4,8 +4,8 @@ export class Main extends Component {
   render() {
     const { selectedMovie } = this.props;
     let plot = null;
-    let listOfActors = [];
-    let generalInformation = {};
+    let listOfActors = null;
+    let generalInformation = null;
 
     switch (selectedMovie) {
       case 'The Showshank Redemption':
@@ -16,7 +16,7 @@ export class Main extends Component {
           country: 'USA',
           studio: 'Castle Rock Entertainment & Sony Pictures',
           genre: 'Drama',
-          releaseYear: 1994,
+          releaseYear: '1994',
         };
         break;
       case 'Uncharted':
@@ -27,7 +27,7 @@ export class Main extends Component {
           country: 'USA',
           studio: 'Sony Pictures Entertainment',
           genre: 'Action, Adventure',
-          releaseYear: 2022,
+          releaseYear: '2022',
         };
         break;
       case 'Spider-man 3':
@@ -38,7 +38,7 @@ export class Main extends Component {
           country: 'USA',
           studio: 'Columbia Pictures, Marvel Studios & Sony Pictures',
           genre: 'Action, Superhero, Adventure',
-          releaseYear: 2007,
+          releaseYear: '2007',
         };
         break;
       default:

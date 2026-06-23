@@ -1,5 +1,3 @@
-'use strict';
-
 import { Component } from 'react';
 
 import Header from './components/Header/Header';
@@ -14,8 +12,8 @@ class App extends Component {
     selectedMovie: null,
   };
 
-  selectMovie = async (movie, movieEl) => {
-    await this.setState({ selectedMovie: movie });
+  selectMovie = movie => {
+    this.setState({ selectedMovie: movie });
   };
 
   render() {

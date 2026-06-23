@@ -8,20 +8,18 @@ export class Header extends Component {
         <header>
           <h3>Movies:</h3>
           <ul>
-            {movies.map(movie => {
-              return (
-                <div
-                  key={movie}
-                  className='card'
-                  onClick={() => onSelectMovie(movie)}>
-                  <img
-                    src={`../../../assets/imgs/${movie.replaceAll(' ', '_')}.png`}
-                    alt='poster'
-                  />
-                  <p>{movie}</p>
-                </div>
-              );
-            })}
+            {movies.map(movie => (
+              <div
+                key={movie}
+                className='card'
+                onClick={() => onSelectMovie(movie)}>
+                <img
+                  src={`../../../assets/imgs/${movie.replaceAll(' ', '_')}.png`}
+                  alt='poster'
+                />
+                <p>{movie}</p>
+              </div>
+            ))}
           </ul>
         </header>
       </>
