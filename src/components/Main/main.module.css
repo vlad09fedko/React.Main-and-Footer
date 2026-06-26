@@ -1,0 +1,8 @@
+main > ul,
+main > p {
+  text-align: left;
+  padding: 0 3em;
+  list-style-type: circle;
+  flex-direction: column;
+  gap: 0;
+}

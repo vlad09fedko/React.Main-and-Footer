@@ -1,33 +1,19 @@
 import { Component } from 'react';
+import styles from './footer.module.css'
+
 
 export class Footer extends Component {
   render() {
-    const { selectedMovie } = this.props;
-    let adress = null;
-    let email = null;
-    let phoneNum = null;
+    let adress = '';
+    let email = '';
+    let phoneNum = '';
 
-    switch (selectedMovie) {
-      case 'The Showshank Redemption':
-        adress = 'adress for Showshank';
-        email = 'showshank@email.com';
-        phoneNum = '+1 111 11 11';
-        break;
-      case 'Uncharted':
-        adress = 'adress for Uncharted';
-        email = 'uncharted@email.com';
-        phoneNum = '+2 222 22 22';
-        break;
-      case 'Spider-man 3':
-        adress = 'adress for Spider-man';
-        email = 'spider@email.com';
-        phoneNum = '+3 333 33 33';
-        break;
-      default:
-        adress = '';
-        email = '';
-        phoneNum = '';
+    if (this.props.selectedMovie) {
+      adress = this.props.selectedMovie.adress;
+      email = this.props.selectedMovie.email;
+      phoneNum = this.props.selectedMovie.phoneNum;
     }
+
     return (
       <>
         <footer>

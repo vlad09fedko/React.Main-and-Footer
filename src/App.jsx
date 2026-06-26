@@ -1,14 +1,16 @@
 import { Component } from 'react';
 
+import movies from './data/movies.js';
+
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 
-import './App.css';
+import styles from './App.module.css';
 
 class App extends Component {
   state = {
-    movies: ['The Showshank Redemption', 'Uncharted', 'Spider-man 3'],
+    movies: movies,
     selectedMovie: null,
   };
 
@@ -19,14 +21,10 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header
-          movies={this.state.movies}
-          onSelectMovie={this.selectMovie}
-          clearSelectedMovie={this.clearSelectedMovie}
-        />
-        <div className='spacer'></div>
+        <Header movies={this.state.movies} onSelectMovie={this.selectMovie} />
+        <div className={styles.spacer}></div>
         <Main selectedMovie={this.state.selectedMovie} />
-        <div className='spacer'></div>
+        <div className={styles.spacer}></div>
         <Footer selectedMovie={this.state.selectedMovie} />
       </>
     );

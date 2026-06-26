@@ -52,25 +52,3 @@ ul {
   border-radius: 0.5em;
   cursor: pointer;
 }
-
-.spacer {
-  width: 100%;
-  height: 1px;
-  background-color: var(--border);
-  margin: 1em 0;
-}
-
-main > ul,
-main > p {
-  text-align: left;
-  padding: 0 3em;
-  list-style-type: circle;
-  flex-direction: column;
-  gap: 0;
-}
-
-footer > ul {
-  margin: 0.5em 0;
-  display: flex;
-  justify-content: space-evenly;
-}

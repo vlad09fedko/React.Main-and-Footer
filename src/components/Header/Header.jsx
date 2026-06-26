@@ -1,27 +1,30 @@
 import { Component } from 'react';
+import styles from './header.module.css'
 
 export class Header extends Component {
+  movies = this.props.movies
+  onSelectMovie = this.props.onSelectMovie
+
   render() {
-    const { movies, onSelectMovie } = this.props;
     return (
       <>
         <header>
           <h3>Movies:</h3>
           <ul>
-            {movies.map(movie => (
+            {this.movies.map(movie => (
               <li
-                key={movie}
-                className='card'
-                onClick={() => onSelectMovie(movie)}>
+                key={movie.id}
+                className={styles.card}
+                onClick={() => this.onSelectMovie(movie)}>
                 <img
-                  src={`../../../assets/imgs/${movie.replaceAll(' ', '_')}.png`}
+                  src={movie.imgPath}
                   alt='poster'
                 />
-                <p>{movie}</p>
+                <p>{movie.title}</p>
               </li>
             ))}
           </ul>
-          <button className='clearBtn' onClick={() => onSelectMovie()}>
+          <button className={styles.clearBtn} onClick={() => this.onSelectMovie()}>
             Clear
           </button>
         </header>
